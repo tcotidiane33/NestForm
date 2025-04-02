@@ -1,11 +1,12 @@
 import { Module, ValidationPipe } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { ConfigModule } from '@nestjs/config';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 import { DatabaseModule } from './config/database.module';
 import { UsersModule } from './modules/users/users.module';
 import { UserController } from './modules/users/controllers/users.controller';
 import { APP_PIPE } from '@nestjs/core';
+import { CustomValidationPipe } from './common/pipes/custom-validation.pipe';
 
 @Module({
   imports: [
@@ -21,8 +22,18 @@ import { APP_PIPE } from '@nestjs/core';
     AppService,
     {
       provide: APP_PIPE,
-      useClass: ValidationPipe,
-    }
+      useValue: CustomValidationPipe,
+    },
+    {
+      provide: 'JSONPLACEHOLDER_CLIENT',
+      inject: [ConfigService],
+      useFactory: (configService: ConfigService) => {
+        const axios = require('axios');
+        return axios.create({
+          baseURL: configService.get('JSONPLACEHOLDER_URL'),
+        });
+      },
+    },
   ],
 })
-export class AppModule { }
+export class AppModule {}

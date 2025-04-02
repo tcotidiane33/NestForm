@@ -1,4 +1,6 @@
-import { IsEmail, IsInt, IsString } from 'class-validator';
+import { ApiHideProperty, ApiProperty } from '@nestjs/swagger';
+import { Exclude, instanceToPlain } from 'class-transformer';
+import { IsEmail, IsInt, IsOptional, IsString } from 'class-validator';
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
@@ -7,7 +9,8 @@ export class User {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @IsString()
+  @ApiProperty()
+  @IsString({ message: `le name est obligatoire`})
   @Column()
   name: string;
 
@@ -15,7 +18,15 @@ export class User {
   @Column({ unique: true })
   email: string;
 
+  @Exclude({ toPlainOnly: true})
+  @ApiHideProperty()
+  @IsOptional()
   @IsString()
-  @Column()
+  @Column( {nullable: true})
   password: string;
+
+
+  toJSON () {
+    return instanceToPlain(this)
+  }
 }

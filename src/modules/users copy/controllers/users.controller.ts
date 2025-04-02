@@ -11,7 +11,7 @@ import {
   Post,
 } from '@nestjs/common';
 import { UserService } from '../services/users.services';
-import { User } from '../entities/users.entity';
+import { User } from '../../auth/entities/auth.entity';
 import { CreateUserDto } from '../dto/create-user.dto';
 import { UpdateUserDto } from '../dto/update-user.dto';
 import { log } from 'console';
