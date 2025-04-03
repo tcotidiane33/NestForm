@@ -11,11 +11,11 @@ import {
   Post,
 } from '@nestjs/common';
 import { AuthService } from '../services/auth.services';
-import { Auth } from '../entities/auth.entity';
+import { Session } from '../entities/session.entity';
 import { AuthDto } from '../dto/auth.dto';
 import { log } from 'console';
 
-@Controller('Auths')
+@Controller('Session')
 export class AuthController {
   constructor(private readonly service: AuthService) {}
 
