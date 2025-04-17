@@ -40,12 +40,14 @@ export default tseslint.config(
       '@typescript-eslint/explicit-function-return-type': 'warn',   // Enforce explicit return types on functions
       '@typescript-eslint/explicit-module-boundary-types': 'warn',   // Enforce explicit return types on module boundaries
       '@typescript-eslint/ban-ts-comment': 'warn', // Warn on @ts-ignore comments
-      
+      '@typescript-eslint/ban-types': 'warn', // Warn on banned types
+      '@typescript-eslint/no-empty-function': 'warn', // Warn on empty functions
       '@typescript-eslint/no-empty-function': 'warn', // Warn on empty functions
       '@typescript-eslint/no-empty-interface': 'warn', // Warn on empty interfaces
       'no-extra-parens': 'warn', // Warn on extra parentheses
       'no-extra-semi': 'warn', // Warn on extra semicolons
       'no-invalid-this': 'warn', // Warn on invalid this usage
+      'no-misused-new': 'warn', // Warn on misused new
       'no-shadow': 'warn', // Warn on shadowed variables
       'no-unused-expressions': 'warn', // Warn on unused expressions
       'no-unused-vars': 'warn', // Warn on unused variables

@@ -40,41 +40,38 @@ export default tseslint.config(
       '@typescript-eslint/explicit-function-return-type': 'warn',   // Enforce explicit return types on functions
       '@typescript-eslint/explicit-module-boundary-types': 'warn',   // Enforce explicit return types on module boundaries
       '@typescript-eslint/ban-ts-comment': 'warn', // Warn on @ts-ignore comments
-      
+      '@typescript-eslint/ban-types': 'warn', // Warn on banned types
       '@typescript-eslint/no-empty-function': 'warn', // Warn on empty functions
       '@typescript-eslint/no-empty-interface': 'warn', // Warn on empty interfaces
-      'no-extra-parens': 'warn', // Warn on extra parentheses
-      'no-extra-semi': 'warn', // Warn on extra semicolons
-      'no-invalid-this': 'warn', // Warn on invalid this usage
-      'no-shadow': 'warn', // Warn on shadowed variables
-      'no-unused-expressions': 'warn', // Warn on unused expressions
-      'no-unused-vars': 'warn', // Warn on unused variables
-      'no-use-before-define': 'warn', // Warn on use before define
-      'no-useless-concat': 'warn', // Warn on useless concatenation
-      'no-useless-escape': 'warn', // Warn on useless escape
-      'no-useless-return': 'warn', // Warn on useless return
-      'no-var': 'warn', // Warn on var usage
-      'prefer-const': 'warn', // Warn on prefer const
-      'prefer-destructuring': 'warn', // Warn on prefer destructuring
-      'prefer-numeric-literals': 'warn', // Warn on prefer numeric literals
-      'prefer-promise-reject-errors': 'warn', // Warn on prefer promise reject errors
-      'prefer-regex-literals': 'warn', // Warn on prefer regex literals
-      'prefer-rest-params': 'warn', // Warn on prefer rest params
-      'prefer-spread': 'warn', // Warn on prefer spread
-      'prefer-template': 'warn', // Warn on prefer template literals
-      'require-atomic-updates': 'warn', // Warn on require atomic updates
-      'require-await': 'warn', // Warn on require await
-      'require-unicode-regexp': 'warn', // Warn on require unicode regexp
-      'rest-spread-spacing': 'warn', // Warn on rest spread spacing
-      'sort-imports': 'warn', // Warn on sort imports
-      'sort-keys': 'warn', // Warn on sort keys
-      'sort-vars': 'warn', // Warn on sort vars
-      'spaced-comment': 'warn', // Warn on spaced comments
-      'template-curly-spacing': 'warn', // Warn on template curly spacing
-      'template-tag-spacing': 'warn', // Warn on template tag spacing
-      'quotes': ['warn', 'single'],     // ✅ Correct
-      'semi': ['warn', 'always'],       // ✅ Correct
-      
+      '@typescript-eslint/no-extra-parens': 'warn', // Warn on extra parentheses
+      '@typescript-eslint/no-extra-semi': 'warn', // Warn on extra semicolons
+      '@typescript-eslint/no-invalid-this': 'warn', /
+      '@typescript-eslint/no-misused-new': 'warn', //
+      '@typescript-eslint/no-non-null-assertion': 'warn', //
+      '@typescript-eslint/no-shadow': 'warn', //
+      '@typescript-eslint/no-unused-vars-experimental': 'warn', //
+      '@typescript-eslint/prefer-as-const': 'warn', //
+      '@typescript-eslint/prefer-namespace-keyword': 'warn', //
+      '@typescript-eslint/prefer-readonly': 'warn', //
+      '@typescript-eslint/prefer-readonly-parameter-types': 'warn', //
+      '@typescript-eslint/prefer-regexp-exec': 'warn', //
+      '@typescript-eslint/prefer-string-starts-ends-with': 'warn', //
+      '@typescript-eslint/quotes': ['warn', 'single'], //
+      '@typescript-eslint/semi': ['warn', 'always'], //
+      '@typescript-eslint/space-before-function-paren': [
+        'warn',
+        {
+          anonymous: 'always',
+          named: 'never',
+          asyncArrow: 'always',
+          method: 'never',
+          constructor: 'never',
+          arrow: 'always',
+          function: 'never',
+          generator: 'never',
+          async: 'always',
+        },
+      ],
     },
   },
 );

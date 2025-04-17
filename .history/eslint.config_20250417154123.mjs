@@ -46,6 +46,7 @@ export default tseslint.config(
       'no-extra-parens': 'warn', // Warn on extra parentheses
       'no-extra-semi': 'warn', // Warn on extra semicolons
       'no-invalid-this': 'warn', // Warn on invalid this usage
+      'no-misused-new': 'warn', // Warn on misused new
       'no-shadow': 'warn', // Warn on shadowed variables
       'no-unused-expressions': 'warn', // Warn on unused expressions
       'no-unused-vars': 'warn', // Warn on unused variables
